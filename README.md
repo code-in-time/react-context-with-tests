@@ -1,6 +1,6 @@
 # Notes
 
-- This is a simple example of writing a very simple react app counter with tests.
+- This is a simple example of writing a very simple react app using context with tests.
 
 ```
 - npm install
