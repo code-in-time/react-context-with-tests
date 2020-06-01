@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
+import LanguageSelect from './LanguageSelect';
 
 function App() {
 
-  const [countVal, setCountVal] = useState(0)
-
   return (
     <div className="App" data-test="app-box">
+    <LanguageSelect  lang="en" />
     </div>
   );
 }
