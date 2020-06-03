@@ -1,24 +1,32 @@
 import React, { useReducer } from "react";
+import { languages } from "./languageData";
 
-interface IState {
-    count: number;
-    lang: string;
+export const actions = {
+    LANG_SET: "LANG_SET"
 }
 
+// todo: fix any  { [title: string]: string; }
+const getText = (langId: string, propVal: string): string => {
+    let result: any | undefined = languages[langId]
+    result = result === undefined ? "Error" : result[propVal]
+    return result
+  }
+
+interface IState {
+    lang: string;
+    fullLang: string;
+}
+// getText(currLang, 'title')
 let reducer = (state: any, action: any) => {
     switch (action.type) {
-        case "INCREMENT":
-            return { ...state, count: state.count + 1 };
-        case "DECREMENT":
-            return { ...state, count: state.count - 1 };
         case "LANG_SET":
-            return { ...state, lang: action.payload};
+            return { ...state, lang: action.payload, fullLang: getText(action.payload, 'title')};
         default:
             return;
     }
 };
 
-const initialState: IState = { count: 0, lang: 'en' }
+const initialState: IState = { lang: 'en', fullLang: 'english' }
 
 export const LanguageContext = React.createContext(initialState);
 

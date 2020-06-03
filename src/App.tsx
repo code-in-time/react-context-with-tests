@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import LanguageSelect from './LanguageSelect';
-import { LanguageProvider } from './utils/LanguageHook';
+import { LanguageProvider, LanguageContext, actions } from './utils/LanguageHook';
+import { useEffect } from 'react';
 
 function App() {
+    const pValue: any = useContext(LanguageContext);
+
+    // Set initial language
+    useEffect(() => {
+        // 
+        pValue.dispatch({ type: actions.LANG_SET, payload: 'en' })
+    });
+
 
     return (
         <LanguageProvider>
             <div className="App" data-test="app-box">
-                <LanguageSelect lang="en" />
+                <LanguageSelect />
             </div>
         </LanguageProvider>
     );
