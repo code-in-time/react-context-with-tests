@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import LanguageSelect from './LanguageSelect';
-import { LanguageProvider, LanguageContext, actions } from './utils/LanguageHook';
+import { LanguageContext, actions } from './utils/LanguageHook';
 import { useEffect } from 'react';
 
 function App() {
@@ -10,15 +10,13 @@ function App() {
     useEffect(() => {
         // 
         pValue.dispatch({ type: actions.LANG_SET, payload: 'en' })
-    });
+    }, []);
 
 
     return (
-        <LanguageProvider>
-            <div className="App" data-test="app-box">
-                <LanguageSelect />
-            </div>
-        </LanguageProvider>
+        <div className="App" data-test="app-box">
+            <LanguageSelect />
+        </div>
     );
 }
 

@@ -26,7 +26,7 @@ let reducer = (state: any, action: any) => {
     }
 };
 
-const initialState: IState = { lang: 'en', fullLang: 'english' }
+const initialState: IState = { lang: '', fullLang: '' }
 
 export const LanguageContext = React.createContext(initialState);
 
