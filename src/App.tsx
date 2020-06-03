@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import LanguageSelect from './LanguageSelect';
+import { LanguageProvider } from './utils/LanguageHook';
 
 function App() {
 
-  return (
-    <div className="App" data-test="app-box">
-    <LanguageSelect  lang="en" />
-    </div>
-  );
+    return (
+        <LanguageProvider>
+            <div className="App" data-test="app-box">
+                <LanguageSelect lang="en" />
+            </div>
+        </LanguageProvider>
+    );
 }
 
 export default App;

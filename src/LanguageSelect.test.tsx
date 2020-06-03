@@ -34,3 +34,6 @@ test.only('the button click will add a "selectedLang" class to the button', () =
       expect(buttonEs.hasClass("selectedLang")).toBeTruthy()
       expect(buttonEn.hasClass("selectedLang")).toBeFalsy()
 })
+
+
+// Set the theme in the reducer

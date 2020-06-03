@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { LanguageContext, ILanguageReducer } from './utils/LanguageHook';
 import { languages, ILang } from './utils/languageData';
 
 interface IProps {
@@ -9,6 +10,7 @@ function LanguageSelect(props: IProps) {
 
   const { lang } = props
   const [currLang, setCurrLang] = useState(lang)
+  const pValue: any = useContext(LanguageContext);
 
 
 // todo: fix any  { [title: string]: string; }
@@ -31,7 +33,10 @@ function LanguageSelect(props: IProps) {
         <button
           key={key}
           className={`btn-${key} ${key === currLang ? 'selectedLang': ''}`}
-          onClick={() => selectLanguageOnClick(key)}
+          onClick={() => {
+            selectLanguageOnClick(key)
+            pValue.dispatch({ type: "LANG_SET", payload: key.toString() })
+          }}
         >{allLang[key].title}</button>)
     }
 
@@ -45,7 +50,8 @@ function LanguageSelect(props: IProps) {
   return (
     <div className="LanguageSelect" data-test="languageSelect-box">
       <div className="languageArea">{getText(currLang, 'title')}</div>
-
+      {pValue.state.count} <br /><br />
+      {pValue.state.lang}
       {buildButtons(languages)}
 
     </div>
