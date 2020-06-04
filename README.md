@@ -6,3 +6,9 @@
 - npm install
 - npm run start
 - npm run test
+
+
+
+
+## TODO fix props
+## TODO fix tests
