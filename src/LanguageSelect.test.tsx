@@ -12,7 +12,7 @@ test.only('that the LanguageSelect component exists', () => {
       };
     });
     const wrapper = shallow(<LanguageSelect />)
-    let s = 1;
+
     expect(wrapper.find('[data-test="languageSelect-box"]').exists()).toBeTruthy()
     wrapper.unmount();
 })
