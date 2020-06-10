@@ -16,7 +16,7 @@ function LanguageSelect() {
             oButtons.push(
                 <button
                     key={key}
-                    className={`btn-${key} ${key === pValue.lang ? 'selectedLang' : ''}`}
+                    className={`btn-${key} ${key === pValue.state.lang ? 'selectedLang' : ''}`}
                     onClick={() => {
                         selectLanguageOnClick(key)
                     }}
