@@ -7,14 +7,12 @@ import { LanguageProvider } from './utils/LanguageHook';
 
 test.only('the button click will add a "selectedLang" class to the button', () => {
     const wrapper = mount(
-      
+
       <LanguageProvider>
         <App />
       </LanguageProvider>
       );
 
-
-        // console.log(LanguageSelect.debug())
     let buttonEs = wrapper.find('LanguageSelect').find('.btn-es')
 
     buttonEs.simulate('click')

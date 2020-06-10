@@ -20,3 +20,18 @@ test('that the language text exists', () => {
   expect(wrapper.find('.languageArea').text()).toBe("English")
   wrapper.unmount();
 })
+
+
+// test('that these buttons are rendered "btn1" "btn2" "btn3"', () => {
+//   const wrapper = shallow(<LanguageSelect />)
+//   expect(wrapper.find('.languageArea').text()).toBe("English")
+//   wrapper.unmount();
+// })
+
+// TODO: mock:
+// -  import { languages, ILang } from './utils/languageData';
+// <div class="btnContainer" >
+//   <button class="btn-en selectedLang">English</button>
+//   <button class="btn-es ">Español</button>
+//   <button class="btn-fi ">Suomalainen</button>
+// </div>
